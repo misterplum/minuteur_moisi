@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+</head>
+<body>
+<script type= "text/javascript">
+	function countdown (sec , elem){
+		var element = document.getElementById(elem);
+		element.innerHTML = "attendez " + sec + " secondes";
+		if (sec < 1) {
+			clearTimeout(timer);
+			element.innerHTML = '<h3>DRING§§!!!<h3>';
+			element.innerHTML +='<a href="file:///home/js/Bureau/formation/minuteur/Minuteur1.html">clique ici!</a>';
+		}
+		sec--;
+		var timer = setTimeout('countdown('+sec+',"'+elem+'")',1000);
+}
+</script>
+<div id = "status"></div>
+<script type="text/javascript">countdown(10,"status");</script>
+</body>
+</html>
